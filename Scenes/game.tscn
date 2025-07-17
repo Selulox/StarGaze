@@ -9,9 +9,6 @@
 
 [node name="GAME" type="Node2D"]
 
-[node name="player_ship" parent="." instance=ExtResource("6_i6g32")]
-position = Vector2(428, 860)
-
 [node name="Background" type="Sprite2D" parent="."]
 
 [node name="Parallax-space-backgound" type="Sprite2D" parent="Background"]
@@ -39,3 +36,6 @@ texture = ExtResource("5_h4fw4")
 [node name="Parallax-space-stars2" type="Sprite2D" parent="Background"]
 position = Vector2(367, 714)
 texture = ExtResource("5_h4fw4")
+
+[node name="player_ship" parent="." instance=ExtResource("6_i6g32")]
+position = Vector2(428, 860)

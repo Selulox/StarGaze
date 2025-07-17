@@ -72,12 +72,26 @@ height = 44.0
 [node name="player_ship" type="CharacterBody2D"]
 script = ExtResource("1_ty8tg")
 
+[node name="Shoot_Point" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -32)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bp4n6")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="player_collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
 shape = SubResource("CapsuleShape2D_q2j26")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="hit" type="Area2D" parent="."]
+
+[node name="Enemy_collision" type="CollisionShape2D" parent="hit"]
+position = Vector2(0, -10)
+shape = SubResource("CapsuleShape2D_q2j26")
+debug_color = Color(0.992915, 0, 0.245263, 0.42)
+
+[node name="Shoot_Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Shoot_Timer" to="." method="_on_shoot_timer_timeout"]
