@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://yclwfu5xag06"]
+
+[ext_resource type="Texture2D" uid="uid://dw45npdnsgg16" path="res://Assets/ships/player_ship/main_ship1.png" id="1_fuej1"]
+[ext_resource type="Script" uid="uid://dwpjfdhhlrs8o" path="res://Scripts/player_ship.gd" id="1_ty8tg"]
+[ext_resource type="Texture2D" uid="uid://cg04agbb5hsxy" path="res://Assets/ships/player_ship/main_ship1left.png" id="2_ty8tg"]
+[ext_resource type="Texture2D" uid="uid://c50tp2suy46ug" path="res://Assets/ships/player_ship/main_ship1right.png" id="3_iitm4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6tvr"]
+atlas = ExtResource("1_fuej1")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4oq7"]
+atlas = ExtResource("1_fuej1")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gljw"]
+atlas = ExtResource("2_ty8tg")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xljp0"]
+atlas = ExtResource("2_ty8tg")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfgbg"]
+atlas = ExtResource("3_iitm4")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3pyb"]
+atlas = ExtResource("3_iitm4")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bp4n6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6tvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4oq7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gljw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xljp0")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfgbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3pyb")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q2j26"]
+radius = 16.0
+height = 44.0
+
+[node name="player_ship" type="CharacterBody2D"]
+script = ExtResource("1_ty8tg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bp4n6")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CapsuleShape2D_q2j26")
+
+[node name="Area2D" type="Area2D" parent="."]
