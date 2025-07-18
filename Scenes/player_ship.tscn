@@ -39,7 +39,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_n4oq7")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 2.0
 }, {
 "frames": [{
@@ -51,7 +51,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -62,7 +62,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q2j26"]
@@ -74,22 +74,25 @@ script = ExtResource("1_ty8tg")
 
 [node name="Shoot_Point" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, -32)
+position = Vector2(0, -26)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bp4n6")
-autoplay = "default"
+animation = &"left"
+autoplay = "idle"
+frame = 1
+frame_progress = 1.0
 
 [node name="player_collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
 shape = SubResource("CapsuleShape2D_q2j26")
 
-[node name="hit" type="Area2D" parent="."]
+[node name="HitBox" type="Area2D" parent="."]
 
-[node name="Enemy_collision" type="CollisionShape2D" parent="hit"]
+[node name="hitbox_collision" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -10)
 shape = SubResource("CapsuleShape2D_q2j26")
-debug_color = Color(0.992915, 0, 0.245263, 0.42)
+debug_color = Color(0.998664, 0, 0.135999, 0.42)
 
 [node name="Shoot_Timer" type="Timer" parent="."]
 autostart = true

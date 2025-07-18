@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://daynpujvx1o3o"]
+[gd_scene load_steps=8 format=3 uid="uid://daynpujvx1o3o"]
 
+[ext_resource type="Script" uid="uid://c4u7kloilukfr" path="res://Scripts/game.gd" id="1_1l0tm"]
 [ext_resource type="Texture2D" uid="uid://rbvqdqnkgux7" path="res://Assets/backgrounds/parallax-space-backgound.png" id="1_wowpa"]
 [ext_resource type="Texture2D" uid="uid://eedek5brh8i" path="res://Assets/backgrounds/parallax-space-big-planet.png" id="2_i6g32"]
 [ext_resource type="Texture2D" uid="uid://c8y7oeoayvaux" path="res://Assets/backgrounds/parallax-space-far-planets.png" id="3_1l0tm"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://yclwfu5xag06" path="res://Scenes/player_ship.tscn" id="6_i6g32"]
 
 [node name="GAME" type="Node2D"]
+script = ExtResource("1_1l0tm")
 
 [node name="Background" type="Sprite2D" parent="."]
 
@@ -38,4 +40,5 @@ position = Vector2(367, 714)
 texture = ExtResource("5_h4fw4")
 
 [node name="player_ship" parent="." instance=ExtResource("6_i6g32")]
+unique_name_in_owner = true
 position = Vector2(428, 860)

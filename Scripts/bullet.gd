@@ -6,7 +6,7 @@ var travelled_distance = 0
 func _physics_process(delta):
 	const speed = 450
 	const range = 750
-	var direction = Vector2.RIGHT.rotated(rotation)
+	var direction = Vector2.UP
 	position += direction * speed * delta 
 	travelled_distance += speed * delta 
 	if travelled_distance > range:
