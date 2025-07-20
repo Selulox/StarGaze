@@ -39,103 +39,20 @@ texture = ExtResource("5_h4fw4")
 position = Vector2(367, 714)
 texture = ExtResource("5_h4fw4")
 
-[node name="player_ship" parent="." instance=ExtResource("6_i6g32")]
-unique_name_in_owner = true
-position = Vector2(428, 860)
-
 [node name="Pause_button" type="Button" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 409.0
-offset_right = 464.0
+offset_left = 389.0
+offset_right = 444.0
 offset_bottom = 57.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 35
 text = "II"
 
-[node name="Paused_Menu" type="ColorRect" parent="."]
+[node name="player_ship" parent="." instance=ExtResource("6_i6g32")]
 unique_name_in_owner = true
-visible = false
-offset_right = 864.0
-offset_bottom = 936.0
-color = Color(0, 0, 0, 0.635294)
-
-[node name="Paused_Menu_Exit" type="Button" parent="Paused_Menu"]
-layout_mode = 2
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -49.0
-offset_top = -3.05176e-05
-offset_bottom = 57.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 35
-text = "X"
-
-[node name="Paused_Menu_Buttons" type="VBoxContainer" parent="Paused_Menu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = -59.0
-offset_right = 71.0
-offset_bottom = 59.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.35848, 1.35848)
-
-[node name="Options" type="Button" parent="Paused_Menu/Paused_Menu_Buttons"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "Options
-"
-
-[node name="About" type="Button" parent="Paused_Menu/Paused_Menu_Buttons"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "About"
-
-[node name="Options_Menu" type="ColorRect" parent="Paused_Menu"]
-unique_name_in_owner = true
-visible = false
-offset_right = 864.0
-offset_bottom = 936.0
-color = Color(0, 0, 0, 0.635294)
-
-[node name="Options_Exit" type="Button" parent="Paused_Menu/Options_Menu"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -49.0
-offset_bottom = 57.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 35
-text = "X"
-
-[node name="About_Menu" type="ColorRect" parent="Paused_Menu"]
-unique_name_in_owner = true
-visible = false
-offset_right = 864.0
-offset_bottom = 936.0
-color = Color(0, 0, 0, 0.635294)
-
-[node name="About_Exit" type="Button" parent="Paused_Menu/About_Menu"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -49.0
-offset_bottom = 57.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 35
-text = "X"
+position = Vector2(428, 860)
 
 [connection signal="pressed" from="Pause_button" to="." method="_on_pause_button_pressed"]
-[connection signal="pressed" from="Paused_Menu/Paused_Menu_Exit" to="." method="_on_paused_menu_exit_pressed"]
-[connection signal="pressed" from="Paused_Menu/Paused_Menu_Buttons/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Paused_Menu/Paused_Menu_Buttons/About" to="." method="_on_about_pressed"]
