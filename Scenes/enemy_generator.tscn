@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://7k22gd7nnxum"]
+
+[node name="Enemy_Generator" type="Node2D"]
+
+[node name="Enemy_1_Timer" type="Timer" parent="."]

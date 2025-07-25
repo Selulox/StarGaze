@@ -26,9 +26,9 @@ func _physics_process(delta: float) -> void:
 func shoot():
 	const Bullet = preload("res://Scenes/bullet.tscn")
 	var new_bullet = Bullet.instantiate()
-	new_bullet.position = %Shoot_Point.position
-	new_bullet.rotation = %Shoot_Point.rotation
-	%Shoot_Point.add_child(new_bullet)
+	%Shoot_Point.get_tree().get_root().add_child(new_bullet)
+	new_bullet.position = %Shoot_Point.global_position
+	
 
 func _on_shoot_timer_timeout() -> void:
 	shoot()

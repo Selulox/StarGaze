@@ -1,11 +1,14 @@
 extends Area2D
 
 var travelled_distance = 0
+var despawn_time = 1
+const speed = 450
+const range = 750
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _ready() -> void:
+	despawn()
+
 func _physics_process(delta):
-	const speed = 450
-	const range = 750
 	var direction = Vector2.UP
 	position += direction * speed * delta 
 	travelled_distance += speed * delta 
@@ -17,3 +20,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.has_method('take_damage'):
 		body.take_damage()
  
+func despawn() -> void:
+	await get_tree().create_timer(despawn_time).timeout
+	queue_free()

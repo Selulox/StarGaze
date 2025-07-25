@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 func _on_pause_button_pressed() -> void:
 	get_tree().paused = true
 	pause_scene = preload("res://Scenes/pause.tscn").instantiate()
-	add_child(pause_scene) 
+	add_child(pause_scene)
