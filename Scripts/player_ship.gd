@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 300
+var player_health = 3
 
 func _physics_process(delta: float) -> void:
 	var input = Input.get_vector('left', 'right', 'up', 'down')
@@ -20,15 +21,20 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed('up'):
 		$AnimatedSprite2D.play('idle')
-
+	
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
+	
 	move_and_slide()
+	
+
+func take_damage():
+	player_health -= 1
+	if player_health == 0:
+		queue_free()
 
 func shoot():
 	const Bullet = preload("res://Scenes/bullet.tscn")
 	var new_bullet = Bullet.instantiate()
 	%Shoot_Point.get_tree().get_root().add_child(new_bullet)
 	new_bullet.position = %Shoot_Point.global_position
-	
-
-func _on_shoot_timer_timeout() -> void:
-	shoot()

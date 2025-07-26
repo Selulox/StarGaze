@@ -13,8 +13,9 @@ script = ExtResource("1_o80xk")
 [node name="Paused_Menu" type="ColorRect" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 864.0
-offset_bottom = 936.0
+offset_right = 1251.0
+offset_bottom = 931.0
+scale = Vector2(0.639653, 0.644238)
 color = Color(0, 0, 0, 0.635294)
 
 [node name="Paused_Menu_Exit" type="Button" parent="Paused_Menu"]
@@ -60,8 +61,8 @@ text = "About"
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_right = 864.0
-offset_bottom = 936.0
+offset_right = 800.0
+offset_bottom = 600.0
 color = Color(0, 0, 0, 0.635294)
 
 [node name="Options_Exit" type="Button" parent="Options_Menu"]
@@ -69,9 +70,11 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -49.0
+offset_left = -31.0
+offset_right = 14.0
 offset_bottom = 57.0
 grow_horizontal = 0
+scale = Vector2(0.681633, 0.681633)
 theme_override_font_sizes/font_size = 35
 text = "X"
 
@@ -79,8 +82,8 @@ text = "X"
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_right = 864.0
-offset_bottom = 936.0
+offset_right = 800.0
+offset_bottom = 600.0
 color = Color(0, 0, 0, 0.635294)
 
 [node name="About_Exit" type="Button" parent="About_Menu"]
@@ -88,9 +91,11 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -49.0
+offset_left = -30.9999
+offset_right = 19.0001
 offset_bottom = 57.0
 grow_horizontal = 0
+scale = Vector2(0.624156, 0.624156)
 theme_override_font_sizes/font_size = 35
 text = "X"
 

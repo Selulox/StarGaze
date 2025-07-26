@@ -46,11 +46,20 @@ height = 36.0
 [node name="enemy1" type="CharacterBody2D"]
 script = ExtResource("1_jwqgc")
 
+[node name="Shoot_Point_Enemy" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 26)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v73nf")
 autoplay = "default"
 frame_progress = 0.208955
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
+position = Vector2(0, -4)
 shape = SubResource("CapsuleShape2D_0a874")
+
+[node name="Shoot_Time" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Shoot_Time" to="." method="_on_shoot_time_timeout"]

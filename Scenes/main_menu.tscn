@@ -11,6 +11,8 @@
 script = ExtResource("1_opfnp")
 
 [node name="Background" type="Sprite2D" parent="."]
+position = Vector2(114, 12)
+scale = Vector2(0.607641, 0.607641)
 
 [node name="Parallax-space-backgound" type="Sprite2D" parent="Background"]
 position = Vector2(443, 470)
@@ -43,9 +45,12 @@ layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_right = 864.0
-offset_bottom = 936.0
+offset_left = 125.0
+offset_top = 19.0
+offset_right = 989.0
+offset_bottom = 955.0
 grow_horizontal = 2
+scale = Vector2(0.607641, 0.607641)
 
 [node name="Title" type="Label" parent="Main_menu_UI"]
 layout_mode = 1

@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 var points_for_kill = 100
 var health = 1
-const xp_drop = 10.0
 @onready var player = get_node("res://Scenes/player_ship.tscn")
 
 #make enemies spawn and move as one
@@ -14,3 +13,13 @@ func take_damage():
 	if health == 0:
 		Global.current_score += points_for_kill
 		queue_free()
+
+func shoot():
+	const Bullet = preload("res://Scenes/enemy_bullet.tscn")
+	var new_bullet = Bullet.instantiate()
+	%Shoot_Point_Enemy.get_tree().get_root().add_child(new_bullet)
+	new_bullet.position = %Shoot_Point_Enemy.global_position
+
+
+func _on_shoot_time_timeout() -> void:
+	shoot()
