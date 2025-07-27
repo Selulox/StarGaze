@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=3 uid="uid://btmxi721m3v3q"]
+
+[ext_resource type="Script" uid="uid://cvnuos8p6gafm" path="res://Scripts/game_over_screen.gd" id="1_0gua7"]
+
+[node name="Game_Over_Screen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_0gua7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 0.635294)
+
+[node name="Game_Over_Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.0
+offset_top = 113.0
+offset_right = 95.0
+offset_bottom = 162.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
+text = "Game Over"
+
+[node name="Replay_Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -21.5
+offset_right = 44.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Replay"
+
+[node name="Main_Menu_Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = 40.5
+offset_right = 48.0
+offset_bottom = 71.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Main menu"
+
+[node name="Exit_Game_Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.5
+offset_top = 90.5
+offset_right = 86.5
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Exit "
+
+[connection signal="pressed" from="Replay_Button" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="Main_Menu_Button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Exit_Game_Button" to="." method="_on_exit_game_button_pressed"]

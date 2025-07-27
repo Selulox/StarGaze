@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://daynpujvx1o3o"]
+[gd_scene load_steps=9 format=3 uid="uid://daynpujvx1o3o"]
 
 [ext_resource type="Script" uid="uid://c4u7kloilukfr" path="res://Scripts/game.gd" id="1_1l0tm"]
 [ext_resource type="Texture2D" uid="uid://rbvqdqnkgux7" path="res://Assets/backgrounds/parallax-space-backgound.png" id="1_wowpa"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ca7ypmtx2kcuq" path="res://Assets/backgrounds/parallax-space-ring-planet.png" id="4_v158k"]
 [ext_resource type="Texture2D" uid="uid://kw785lce5imy" path="res://Assets/backgrounds/parallax-space-stars.png" id="5_h4fw4"]
 [ext_resource type="PackedScene" uid="uid://yclwfu5xag06" path="res://Scenes/player_ship.tscn" id="6_i6g32"]
+[ext_resource type="PackedScene" uid="uid://7k22gd7nnxum" path="res://Scenes/enemy_generator.tscn" id="8_v158k"]
 
 [node name="GAME" type="Node2D"]
 script = ExtResource("1_1l0tm")
@@ -41,6 +42,10 @@ texture = ExtResource("5_h4fw4")
 position = Vector2(367, 714)
 texture = ExtResource("5_h4fw4")
 
+[node name="SpawnPoint" type="Node2D" parent="."]
+modulate = Color(0.312725, 0.488539, 1, 1)
+position = Vector2(402, 62)
+
 [node name="Pause_button" type="Button" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
@@ -56,6 +61,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="player_ship" parent="." instance=ExtResource("6_i6g32")]
 unique_name_in_owner = true
-position = Vector2(407, 568)
+position = Vector2(403, 555)
+
+[node name="Enemy_Generator" parent="." instance=ExtResource("8_v158k")]
 
 [connection signal="pressed" from="Pause_button" to="." method="_on_pause_button_pressed"]
+[connection signal="health_depleted" from="player_ship" to="." method="_on_player_ship_health_depleted"]

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 300
 var player_health = 3
+signal health_depleted
 
 func _physics_process(delta: float) -> void:
 	var input = Input.get_vector('left', 'right', 'up', 'down')
@@ -26,7 +27,8 @@ func _physics_process(delta: float) -> void:
 		shoot()
 	
 	move_and_slide()
-	
+	if player_health <= 0.0:
+		health_depleted.emit()
 
 func take_damage():
 	player_health -= 1
