@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://7k22gd7nnxum" path="res://Scenes/enemy_generator.tscn" id="8_v158k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v158k"]
-size = Vector2(715, 49)
+size = Vector2(800, 49)
 
 [node name="GAME" type="Node2D"]
 script = ExtResource("1_1l0tm")
@@ -46,12 +46,11 @@ position = Vector2(367, 714)
 texture = ExtResource("5_h4fw4")
 
 [node name="Spawn_Area" type="Area2D" parent="."]
-position = Vector2(265, -45)
 
 [node name="SpawnArea_col" type="CollisionShape2D" parent="Spawn_Area"]
 light_mask = 512
 visibility_layer = 512
-position = Vector2(92, 21)
+position = Vector2(400, -24.5)
 shape = SubResource("RectangleShape2D_v158k")
 
 [node name="Pause_button" type="Button" parent="."]
@@ -72,7 +71,6 @@ unique_name_in_owner = true
 position = Vector2(403, 555)
 
 [node name="Enemy_Generator" parent="." instance=ExtResource("8_v158k")]
-position = Vector2(357, -22)
 
 [connection signal="pressed" from="Pause_button" to="." method="_on_pause_button_pressed"]
 [connection signal="health_depleted" from="player_ship" to="." method="_on_player_ship_health_depleted"]

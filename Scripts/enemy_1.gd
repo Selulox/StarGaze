@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
 var points_for_kill = 100
+const Speed = 100
 var health = 1
 @onready var player = get_node("res://Scenes/player_ship.tscn")
 
 #make enemies spawn and move as one
 func _physics_process(_delta: float) -> void:
-	pass
+	var direction = Vector2.DOWN
+	position += direction * Speed * _delta
+	move_and_slide()
 
 func take_damage():
 	health -= 1
