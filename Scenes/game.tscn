@@ -51,7 +51,7 @@ position = Vector2(265, -45)
 [node name="SpawnArea_col" type="CollisionShape2D" parent="Spawn_Area"]
 light_mask = 512
 visibility_layer = 512
-position = Vector2(92, 21)
+position = Vector2(-51, 19)
 shape = SubResource("RectangleShape2D_v158k")
 
 [node name="Pause_button" type="Button" parent="."]

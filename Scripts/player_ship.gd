@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 const SPEED = 300
 var player_health = 3
+const damage_rate = 1
 signal health_depleted
+
 
 func _physics_process(delta: float) -> void:
 	var input = Input.get_vector('left', 'right', 'up', 'down')
@@ -29,6 +31,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	if player_health <= 0.0:
 		health_depleted.emit()
+	
+	
+	var overlapping_enemies = %HitBox.get_overlapping_bodies()
+	if overlapping_enemies.size() > 0:
+		player_health -= damage_rate * overlapping_enemies.size() * delta
+		if player_health <= 0.0:
+			health_depleted.emit()
 
 func take_damage():
 	player_health -= 1
