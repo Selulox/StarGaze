@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8y7oeoayvaux"
-path="res://.godot/imported/parallax-space-far-planets.png-2c02d60816abeef55195bb5b96f055bf.ctex"
+uid="uid://cd15pv2qnj6cp"
+path="res://.godot/imported/base_background_combo.png-6be2a55052615f5f85e343016aec5477.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/backgrounds/parallax-space-far-planets.png"
-dest_files=["res://.godot/imported/parallax-space-far-planets.png-2c02d60816abeef55195bb5b96f055bf.ctex"]
+source_file="res://Assets/backgrounds/base_background_combo.png"
+dest_files=["res://.godot/imported/base_background_combo.png-6be2a55052615f5f85e343016aec5477.ctex"]
 
 [params]
 

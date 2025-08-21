@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rbvqdqnkgux7"
-path="res://.godot/imported/parallax-space-backgound.png-2f70ec8928a79e02991222637ae58c84.ctex"
+uid="uid://7phjt0b2y71h"
+path="res://.godot/imported/retro_bullet_player.png-81a5edf59e4cde34ba093d2294049051.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/backgrounds/parallax-space-backgound.png"
-dest_files=["res://.godot/imported/parallax-space-backgound.png-2f70ec8928a79e02991222637ae58c84.ctex"]
+source_file="res://Assets/Effects/retro_bullet_player.png"
+dest_files=["res://.godot/imported/retro_bullet_player.png-81a5edf59e4cde34ba093d2294049051.ctex"]
 
 [params]
 

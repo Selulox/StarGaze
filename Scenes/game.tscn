@@ -1,11 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://daynpujvx1o3o"]
+[gd_scene load_steps=6 format=3 uid="uid://daynpujvx1o3o"]
 
 [ext_resource type="Script" uid="uid://c4u7kloilukfr" path="res://Scripts/game.gd" id="1_1l0tm"]
-[ext_resource type="Texture2D" uid="uid://rbvqdqnkgux7" path="res://Assets/backgrounds/parallax-space-backgound.png" id="1_wowpa"]
-[ext_resource type="Texture2D" uid="uid://eedek5brh8i" path="res://Assets/backgrounds/parallax-space-big-planet.png" id="2_i6g32"]
-[ext_resource type="Texture2D" uid="uid://c8y7oeoayvaux" path="res://Assets/backgrounds/parallax-space-far-planets.png" id="3_1l0tm"]
-[ext_resource type="Texture2D" uid="uid://ca7ypmtx2kcuq" path="res://Assets/backgrounds/parallax-space-ring-planet.png" id="4_v158k"]
-[ext_resource type="Texture2D" uid="uid://kw785lce5imy" path="res://Assets/backgrounds/parallax-space-stars.png" id="5_h4fw4"]
+[ext_resource type="Texture2D" uid="uid://bjawshfu0jbd3" path="res://Assets/backgrounds/base_background-export-2.png" id="2_v158k"]
 [ext_resource type="PackedScene" uid="uid://yclwfu5xag06" path="res://Scenes/player_ship.tscn" id="6_i6g32"]
 [ext_resource type="PackedScene" uid="uid://7k22gd7nnxum" path="res://Scenes/enemy_generator.tscn" id="8_v158k"]
 
@@ -16,34 +12,9 @@ size = Vector2(715, 49)
 script = ExtResource("1_1l0tm")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(114, 12)
-scale = Vector2(0.607641, 0.607641)
-
-[node name="Parallax-space-backgound" type="Sprite2D" parent="Background"]
-position = Vector2(443, 470)
-scale = Vector2(5.98529, 6.54688)
-texture = ExtResource("1_wowpa")
-
-[node name="Parallax-space-big-planet" type="Sprite2D" parent="Background"]
-position = Vector2(510, 370)
-scale = Vector2(4.11364, 4.1092)
-texture = ExtResource("2_i6g32")
-
-[node name="Parallax-space-far-planets" type="Sprite2D" parent="Background"]
-position = Vector2(171, 522)
-texture = ExtResource("3_1l0tm")
-
-[node name="Parallax-space-ring-planet" type="Sprite2D" parent="Background"]
-position = Vector2(693, 767)
-texture = ExtResource("4_v158k")
-
-[node name="Parallax-space-stars" type="Sprite2D" parent="Background"]
-position = Vector2(214, 123)
-texture = ExtResource("5_h4fw4")
-
-[node name="Parallax-space-stars2" type="Sprite2D" parent="Background"]
-position = Vector2(367, 714)
-texture = ExtResource("5_h4fw4")
+position = Vector2(400, 300)
+scale = Vector2(2.94118, 3.75)
+texture = ExtResource("2_v158k")
 
 [node name="Spawn_Area" type="Area2D" parent="."]
 position = Vector2(265, -45)

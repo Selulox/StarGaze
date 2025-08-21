@@ -99,8 +99,28 @@ scale = Vector2(0.624156, 0.624156)
 theme_override_font_sizes/font_size = 35
 text = "X"
 
+[node name="Exit_Game" type="Button" parent="."]
+offset_left = 261.0
+offset_top = 435.0
+offset_right = 581.0
+offset_bottom = 492.0
+theme_override_font_sizes/font_size = 35
+text = "Exit Game
+"
+
+[node name="Exit_to_Main_Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 368.0
+offset_right = 581.0
+offset_bottom = 425.0
+theme_override_font_sizes/font_size = 35
+text = "Exit To Main Menu"
+
 [connection signal="pressed" from="Paused_Menu/Paused_Menu_Exit" to="." method="_on_paused_menu_exit_pressed"]
 [connection signal="pressed" from="Paused_Menu/Paused_Menu_Buttons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Paused_Menu/Paused_Menu_Buttons/About" to="." method="_on_about_pressed"]
 [connection signal="pressed" from="Options_Menu/Options_Exit" to="." method="_on_options_exit_pressed"]
 [connection signal="pressed" from="About_Menu/About_Exit" to="." method="_on_about_exit_pressed"]
+[connection signal="pressed" from="Exit_Game" to="." method="_on_exit_game_pressed"]
+[connection signal="pressed" from="Exit_to_Main_Menu" to="." method="_on_exit_to_main_menu_pressed"]

@@ -13,17 +13,17 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
 	
-	if Input.is_action_just_pressed('left'):
-		$AnimatedSprite2D.play("left")
+	#if Input.is_action_just_pressed('left'):
+		#$AnimatedSprite2D.play("left")
 	
-	if Input.is_action_just_pressed('right'):
-		$AnimatedSprite2D.play('right')
+	#if Input.is_action_just_pressed('right'):
+		#$AnimatedSprite2D.play('right')
 	
-	if Input.is_action_just_pressed('down'):
-		$AnimatedSprite2D.play('idle')
+	#if Input.is_action_just_pressed('down'):
+		#$AnimatedSprite2D.play('idle')
 	
-	if Input.is_action_just_pressed('up'):
-		$AnimatedSprite2D.play('idle')
+	#if Input.is_action_just_pressed('up'):
+		#$AnimatedSprite2D.play('idle')
 	
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
@@ -31,7 +31,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	if player_health <= 0.0:
 		health_depleted.emit()
-	
 	
 	var overlapping_enemies = %HitBox.get_overlapping_bodies()
 	if overlapping_enemies.size() > 0:
