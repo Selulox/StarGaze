@@ -1,7 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://daynpujvx1o3o"]
+[gd_scene load_steps=11 format=3 uid="uid://daynpujvx1o3o"]
 
 [ext_resource type="Script" uid="uid://c4u7kloilukfr" path="res://Scripts/game.gd" id="1_1l0tm"]
-[ext_resource type="Texture2D" uid="uid://bjawshfu0jbd3" path="res://Assets/backgrounds/base_background-export-2.png" id="2_v158k"]
+[ext_resource type="Texture2D" uid="uid://qrlkatf8acsa" path="res://Assets/backgrounds/background_gba_space.png" id="2_v158k"]
+[ext_resource type="Texture2D" uid="uid://iluitgxptctj" path="res://Assets/backgrounds/base_planet_2.png" id="3_h4fw4"]
+[ext_resource type="Texture2D" uid="uid://dofxqen8sywqc" path="res://Assets/backgrounds/sun.png" id="3_ldgsr"]
+[ext_resource type="Script" uid="uid://byxdvkx3grmr3" path="res://Scripts/score_label.gd" id="3_wowpa"]
+[ext_resource type="Texture2D" uid="uid://cm8g7s7551u3e" path="res://Assets/backgrounds/base_particle.png" id="4_ldgsr"]
+[ext_resource type="Texture2D" uid="uid://6mkqc1xtlmtj" path="res://Assets/backgrounds/base_planet_1.png" id="5_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://yclwfu5xag06" path="res://Scenes/player_ship.tscn" id="6_i6g32"]
 [ext_resource type="PackedScene" uid="uid://7k22gd7nnxum" path="res://Scenes/enemy_generator.tscn" id="8_v158k"]
 
@@ -15,6 +20,65 @@ script = ExtResource("1_1l0tm")
 position = Vector2(400, 300)
 scale = Vector2(2.94118, 3.75)
 texture = ExtResource("2_v158k")
+
+[node name="Sun" type="Sprite2D" parent="Background"]
+position = Vector2(-87.7199, -66.9333)
+scale = Vector2(0.34, 0.266667)
+texture = ExtResource("3_ldgsr")
+
+[node name="BasePlanet2" type="Sprite2D" parent="Background"]
+position = Vector2(-7.48, -21.3333)
+scale = Vector2(1.20109, 0.942036)
+texture = ExtResource("3_h4fw4")
+
+[node name="BaseParticle" type="Sprite2D" parent="Background"]
+position = Vector2(-6.34599, -34.7866)
+rotation = -3.14159
+scale = Vector2(0.605838, 0.475167)
+texture = ExtResource("4_ldgsr")
+
+[node name="BaseParticle2" type="Sprite2D" parent="Background"]
+position = Vector2(75.4799, 33.8667)
+scale = Vector2(0.34, 0.266667)
+texture = ExtResource("4_ldgsr")
+
+[node name="BasePlanet1" type="Sprite2D" parent="Background"]
+position = Vector2(115.26, -60.5333)
+scale = Vector2(0.373723, 0.293116)
+texture = ExtResource("5_o5yvi")
+
+[node name="BaseParticle3" type="Sprite2D" parent="Background"]
+position = Vector2(96.8999, -27.4667)
+rotation = 1.58286
+scale = Vector2(0.383837, 0.48937)
+skew = -0.00464296
+texture = ExtResource("4_ldgsr")
+
+[node name="BaseParticle5" type="Sprite2D" parent="Background"]
+position = Vector2(-83.2999, 2.66666)
+scale = Vector2(0.87264, 0.684424)
+texture = ExtResource("4_ldgsr")
+
+[node name="BaseParticle4" type="Sprite2D" parent="Background"]
+position = Vector2(-85.3399, 56.5333)
+scale = Vector2(0.34, 0.266667)
+texture = ExtResource("4_ldgsr")
+
+[node name="Label_Keep" type="CanvasLayer" parent="."]
+
+[node name="Score_Label" type="RichTextLabel" parent="Label_Keep"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.0
+offset_right = 97.0
+offset_bottom = 42.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 30
+text = "Score: 99999"
+script = ExtResource("3_wowpa")
 
 [node name="Spawn_Area" type="Area2D" parent="."]
 position = Vector2(265, -45)

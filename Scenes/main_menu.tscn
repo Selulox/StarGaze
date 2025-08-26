@@ -1,15 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://cllj6qbg7n5l"]
+[gd_scene load_steps=8 format=3 uid="uid://cllj6qbg7n5l"]
 
 [ext_resource type="Script" uid="uid://n8g06737dxj7" path="res://Scripts/main_menu.gd" id="1_opfnp"]
-[ext_resource type="Texture2D" uid="uid://bjawshfu0jbd3" path="res://Assets/backgrounds/base_background-export-2.png" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://qrlkatf8acsa" path="res://Assets/backgrounds/background_gba_space.png" id="2_opfnp"]
+[ext_resource type="Texture2D" uid="uid://dofxqen8sywqc" path="res://Assets/backgrounds/sun.png" id="3_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://iluitgxptctj" path="res://Assets/backgrounds/base_planet_2.png" id="4_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://cm8g7s7551u3e" path="res://Assets/backgrounds/base_particle.png" id="5_trj04"]
+[ext_resource type="Texture2D" uid="uid://6mkqc1xtlmtj" path="res://Assets/backgrounds/base_planet_1.png" id="6_16hvj"]
+[ext_resource type="AudioStream" uid="uid://c0t1oaou8vjds" path="res://Assets/Music/OutThere.ogg" id="7_cp0ys"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_opfnp")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background2" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
 scale = Vector2(2.94118, 3.75)
-texture = ExtResource("2_48xlc")
+texture = ExtResource("2_opfnp")
+
+[node name="Sun" type="Sprite2D" parent="Background2"]
+position = Vector2(-87.7199, -66.9333)
+scale = Vector2(0.34, 0.266667)
+texture = ExtResource("3_cp0ys")
+
+[node name="BasePlanet2" type="Sprite2D" parent="Background2"]
+position = Vector2(-7.48, -21.3333)
+scale = Vector2(1.20109, 0.942036)
+texture = ExtResource("4_yhxw7")
+
+[node name="BaseParticle" type="Sprite2D" parent="Background2"]
+position = Vector2(-6.34599, -34.7866)
+rotation = -3.14159
+scale = Vector2(0.605838, 0.475167)
+texture = ExtResource("5_trj04")
+
+[node name="BaseParticle2" type="Sprite2D" parent="Background2"]
+position = Vector2(75.4799, 33.8667)
+scale = Vector2(0.34, 0.266667)
+texture = ExtResource("5_trj04")
+
+[node name="BasePlanet1" type="Sprite2D" parent="Background2"]
+position = Vector2(115.26, -60.5333)
+scale = Vector2(0.373723, 0.293116)
+texture = ExtResource("6_16hvj")
+
+[node name="BaseParticle3" type="Sprite2D" parent="Background2"]
+position = Vector2(96.8999, -27.4667)
+rotation = 1.58286
+scale = Vector2(0.383837, 0.48937)
+skew = -0.00464296
+texture = ExtResource("5_trj04")
+
+[node name="BaseParticle5" type="Sprite2D" parent="Background2"]
+position = Vector2(-83.2999, 2.66666)
+scale = Vector2(0.87264, 0.684424)
+texture = ExtResource("5_trj04")
+
+[node name="BaseParticle4" type="Sprite2D" parent="Background2"]
+position = Vector2(-85.3399, 56.5333)
+scale = Vector2(0.34, 0.266667)
+texture = ExtResource("5_trj04")
 
 [node name="Main_menu_UI" type="Control" parent="."]
 layout_mode = 3
@@ -108,6 +156,10 @@ offset_bottom = 57.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 35
 text = "X"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_cp0ys")
+autoplay = true
 
 [connection signal="pressed" from="Main_menu_UI/Main_Menu_Buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main_menu_UI/Main_Menu_Buttons/Options" to="." method="_on_options_pressed"]

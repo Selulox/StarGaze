@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkpx44fkv6n22"]
+[gd_scene load_steps=5 format=3 uid="uid://bkpx44fkv6n22"]
 
 [ext_resource type="Script" uid="uid://du0r58krfau3m" path="res://Scripts/bullet.gd" id="1_xjght"]
 [ext_resource type="Texture2D" uid="uid://7phjt0b2y71h" path="res://Assets/Effects/retro_bullet_player.png" id="2_oduel"]
+[ext_resource type="AudioStream" uid="uid://b2gffnudo13jk" path="res://Assets/SFX/laserfire01.ogg" id="3_ycag2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oduel"]
 radius = 3.0
@@ -15,5 +16,9 @@ texture = ExtResource("2_oduel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_oduel")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ycag2")
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

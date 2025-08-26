@@ -3,6 +3,13 @@ extends Node2D
 var death_scene
 var pause_scene
 
+
+
+func update_score(): 
+	if Global.current_score > Global.high_score:
+		Global.high_score = Global.current_score
+	Global.current_score = 0
+
 func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("exit_button"):
