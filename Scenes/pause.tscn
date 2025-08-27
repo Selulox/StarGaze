@@ -18,18 +18,6 @@ offset_bottom = 931.0
 scale = Vector2(0.639653, 0.644238)
 color = Color(0, 0, 0, 0.635294)
 
-[node name="Paused_Menu_Exit" type="Button" parent="Paused_Menu"]
-unique_name_in_owner = true
-layout_mode = 2
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -48.7858
-offset_right = 0.214233
-offset_bottom = 57.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 35
-text = "X"
-
 [node name="Paused_Menu_Buttons" type="VBoxContainer" parent="Paused_Menu"]
 unique_name_in_owner = true
 layout_mode = 1
@@ -45,6 +33,11 @@ offset_bottom = 100.466
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.35848, 1.35848)
+
+[node name="Resume" type="Button" parent="Paused_Menu/Paused_Menu_Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Resume"
 
 [node name="Options" type="Button" parent="Paused_Menu/Paused_Menu_Buttons"]
 layout_mode = 2
@@ -110,7 +103,7 @@ scale = Vector2(0.624156, 0.624156)
 theme_override_font_sizes/font_size = 35
 text = "X"
 
-[connection signal="pressed" from="Paused_Menu/Paused_Menu_Exit" to="." method="_on_paused_menu_exit_pressed"]
+[connection signal="pressed" from="Paused_Menu/Paused_Menu_Buttons/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Paused_Menu/Paused_Menu_Buttons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Paused_Menu/Paused_Menu_Buttons/About" to="." method="_on_about_pressed"]
 [connection signal="pressed" from="Paused_Menu/Paused_Menu_Buttons/Exit_to_Main_Menu" to="." method="_on_exit_to_main_menu_pressed"]
