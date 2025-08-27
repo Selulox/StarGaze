@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://daynpujvx1o3o"]
+[gd_scene load_steps=16 format=3 uid="uid://daynpujvx1o3o"]
 
 [ext_resource type="Script" uid="uid://c4u7kloilukfr" path="res://Scripts/game.gd" id="1_1l0tm"]
 [ext_resource type="Texture2D" uid="uid://qrlkatf8acsa" path="res://Assets/backgrounds/background_gba_space.png" id="2_v158k"]
@@ -8,7 +8,32 @@
 [ext_resource type="Texture2D" uid="uid://cm8g7s7551u3e" path="res://Assets/backgrounds/base_particle.png" id="4_ldgsr"]
 [ext_resource type="Texture2D" uid="uid://6mkqc1xtlmtj" path="res://Assets/backgrounds/base_planet_1.png" id="5_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://yclwfu5xag06" path="res://Scenes/player_ship.tscn" id="6_i6g32"]
+[ext_resource type="Script" uid="uid://cvnuos8p6gafm" path="res://Scripts/game_over_screen.gd" id="7_o5yvi"]
+[ext_resource type="Script" uid="uid://cfcnq0m7pxitr" path="res://Scripts/high_score_label.gd" id="8_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://7k22gd7nnxum" path="res://Scenes/enemy_generator.tscn" id="8_v158k"]
+
+[sub_resource type="Curve" id="Curve_o5yvi"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rku1e"]
+curve = SubResource("Curve_o5yvi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o5yvi"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(300, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(300, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.5
+scale_max = 0.5
+scale_over_velocity_min = 5.0
+scale_over_velocity_max = 50.0
+scale_over_velocity_curve = SubResource("CurveTexture_rku1e")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v158k"]
 size = Vector2(715, 49)
@@ -20,6 +45,17 @@ script = ExtResource("1_1l0tm")
 position = Vector2(400, 300)
 scale = Vector2(2.94118, 3.75)
 texture = ExtResource("2_v158k")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Background"]
+position = Vector2(-102.68, -86.9333)
+scale = Vector2(0.34, 0.266667)
+amount = 20
+texture = ExtResource("4_ldgsr")
+lifetime = 20.0
+preprocess = 20.0
+fixed_fps = 60
+visibility_rect = Rect2(-100, -100, 800, 600)
+process_material = SubResource("ParticleProcessMaterial_o5yvi")
 
 [node name="Sun" type="Sprite2D" parent="Background"]
 position = Vector2(-87.7199, -66.9333)
@@ -64,21 +100,92 @@ position = Vector2(-85.3399, 56.5333)
 scale = Vector2(0.34, 0.266667)
 texture = ExtResource("4_ldgsr")
 
+[node name="Game_Over_Screen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+script = ExtResource("7_o5yvi")
+
+[node name="ColorRect" type="ColorRect" parent="Game_Over_Screen"]
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 0.635294)
+
+[node name="Game_Over_Label" type="Label" parent="Game_Over_Screen/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.0
+offset_top = 113.0
+offset_right = 95.0
+offset_bottom = 162.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
+text = "Game Over"
+
+[node name="buttons_container" type="VBoxContainer" parent="Game_Over_Screen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -38.0
+offset_right = 72.5
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Replay_Button" type="Button" parent="Game_Over_Screen/buttons_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Replay"
+
+[node name="Main_Menu_Button" type="Button" parent="Game_Over_Screen/buttons_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Main menu"
+
+[node name="Exit_Game_Button" type="Button" parent="Game_Over_Screen/buttons_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Exit "
+
 [node name="Label_Keep" type="CanvasLayer" parent="."]
 
 [node name="Score_Label" type="RichTextLabel" parent="Label_Keep"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -97.0
-offset_right = 97.0
+offset_left = -63.0
+offset_right = 131.0
 offset_bottom = 42.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 30
-text = "Score: 99999"
+text = " 99999"
 script = ExtResource("3_wowpa")
+
+[node name="High_Score_Label" type="RichTextLabel" parent="Label_Keep"]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -105.0
+offset_right = 206.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "High Score: 9999999999"
+script = ExtResource("8_ldgsr")
 
 [node name="Spawn_Area" type="Area2D" parent="."]
 position = Vector2(265, -45)
@@ -93,7 +200,8 @@ shape = SubResource("RectangleShape2D_v158k")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_right = 55.0
+offset_left = 766.0
+offset_right = 821.0
 offset_bottom = 57.0
 grow_horizontal = 2
 scale = Vector2(0.612395, 0.612395)
@@ -109,5 +217,8 @@ position = Vector2(403, 555)
 [node name="Enemy_Generator" parent="." instance=ExtResource("8_v158k")]
 position = Vector2(357, -22)
 
+[connection signal="pressed" from="Game_Over_Screen/buttons_container/Replay_Button" to="Game_Over_Screen" method="_on_replay_button_pressed"]
+[connection signal="pressed" from="Game_Over_Screen/buttons_container/Main_Menu_Button" to="Game_Over_Screen" method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Game_Over_Screen/buttons_container/Exit_Game_Button" to="Game_Over_Screen" method="_on_exit_game_button_pressed"]
 [connection signal="pressed" from="Pause_button" to="." method="_on_pause_button_pressed"]
 [connection signal="health_depleted" from="player_ship" to="." method="_on_player_ship_health_depleted"]

@@ -123,8 +123,10 @@ text = "Exit"
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_right = 864.0
-offset_bottom = 936.0
+offset_left = -206.0
+offset_top = -31.0
+offset_right = 1111.0
+offset_bottom = 956.0
 color = Color(0, 0, 0, 0.635294)
 
 [node name="Options_Exit" type="Button" parent="Main_menu_UI/Options_Menu"]
@@ -142,8 +144,10 @@ text = "X"
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_right = 864.0
-offset_bottom = 936.0
+offset_left = -206.0
+offset_top = -31.0
+offset_right = 1111.0
+offset_bottom = 956.0
 color = Color(0, 0, 0, 0.635294)
 
 [node name="About_Exit" type="Button" parent="Main_menu_UI/About_Menu"]
