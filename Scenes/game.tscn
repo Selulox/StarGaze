@@ -102,6 +102,8 @@ scale = Vector2(0.34, 0.266667)
 texture = ExtResource("4_ldgsr")
 
 [node name="PAUSE" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("7_rku1e")]
+unique_name_in_owner = true
+visible = false
 game_manager = NodePath("..")
 
 [node name="Game_Over_Screen" type="CanvasLayer" parent="."]

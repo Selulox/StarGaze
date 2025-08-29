@@ -3,6 +3,7 @@ extends Node
 class_name GameManager
 
 @onready var pause: Control = $PAUSE
+
 var death_scene
 var pause_scene
 var game_paused : bool = false:
@@ -12,12 +13,15 @@ var game_paused : bool = false:
 		game_paused = value
 		get_tree().paused = game_paused
 		emit_signal("toggle_game_paused", game_paused)
+		#game_paused = !game_paused (ınput event)
 
 signal toggle_game_paused(is_paused : bool)
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("exit_button"):
-		game_paused = !game_paused
+		%PAUSE.visible = true
+		get_tree().paused = true
+
 
 func update_score(): 
 	if Global.current_score > Global.high_score:

@@ -18,3 +18,10 @@ func _on_about_pressed() -> void:
 
 func _on_about_exit_pressed() -> void:
 	%About_Menu.visible = false
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("exit_button"):
+		if %About_Menu.visible == true:
+			%About_Menu.visible = false
+		if %Options_Menu.visible == true:
+			%Options_Menu.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cllj6qbg7n5l"]
+[gd_scene load_steps=8 format=3 uid="uid://cllj6qbg7n5l"]
 
 [ext_resource type="Script" uid="uid://n8g06737dxj7" path="res://Scripts/main_menu.gd" id="1_opfnp"]
 [ext_resource type="Texture2D" uid="uid://qrlkatf8acsa" path="res://Assets/backgrounds/background_gba_space.png" id="2_opfnp"]
@@ -8,29 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://6mkqc1xtlmtj" path="res://Assets/backgrounds/base_planet_1.png" id="6_16hvj"]
 [ext_resource type="AudioStream" uid="uid://c0t1oaou8vjds" path="res://Assets/Music/OutThere.ogg" id="7_cp0ys"]
 
-[sub_resource type="Curve" id="Curve_cp0ys"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_rku1e"]
-curve = SubResource("Curve_cp0ys")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yhxw7"]
-particle_flag_disable_z = true
-emission_shape_offset = Vector3(300, 0, 0)
-emission_shape = 3
-emission_box_extents = Vector3(300, 1, 1)
-direction = Vector3(0, 1, 0)
-spread = 0.0
-initial_velocity_min = 25.0
-initial_velocity_max = 50.0
-gravity = Vector3(0, 98, 0)
-scale_min = 0.5
-scale_max = 0.5
-scale_over_velocity_min = 5.0
-scale_over_velocity_max = 50.0
-scale_over_velocity_curve = SubResource("CurveTexture_rku1e")
-
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_opfnp")
 
@@ -38,17 +15,6 @@ script = ExtResource("1_opfnp")
 position = Vector2(400, 300)
 scale = Vector2(2.94118, 3.75)
 texture = ExtResource("2_opfnp")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Background"]
-position = Vector2(-102.68, -86.9333)
-scale = Vector2(0.34, 0.266667)
-amount = 20
-texture = ExtResource("5_trj04")
-lifetime = 20.0
-preprocess = 20.0
-fixed_fps = 60
-visibility_rect = Rect2(-100, -100, 800, 600)
-process_material = SubResource("ParticleProcessMaterial_yhxw7")
 
 [node name="Sun" type="Sprite2D" parent="Background"]
 position = Vector2(-87.7199, -66.9333)

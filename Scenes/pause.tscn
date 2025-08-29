@@ -45,11 +45,6 @@ theme_override_font_sizes/font_size = 35
 text = "Options
 "
 
-[node name="About" type="Button" parent="Paused_Menu/Paused_Menu_Buttons"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "About"
-
 [node name="Exit_to_Main_Menu" type="Button" parent="Paused_Menu/Paused_Menu_Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
@@ -82,31 +77,8 @@ scale = Vector2(0.681633, 0.681633)
 theme_override_font_sizes/font_size = 35
 text = "X"
 
-[node name="About_Menu" type="ColorRect" parent="."]
-unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_right = 800.0
-offset_bottom = 600.0
-color = Color(0, 0, 0, 0.635294)
-
-[node name="About_Exit" type="Button" parent="About_Menu"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -31.0
-offset_right = 19.0
-offset_bottom = 57.0
-grow_horizontal = 0
-scale = Vector2(0.624156, 0.624156)
-theme_override_font_sizes/font_size = 35
-text = "X"
-
 [connection signal="pressed" from="Paused_Menu/Paused_Menu_Buttons/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Paused_Menu/Paused_Menu_Buttons/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Paused_Menu/Paused_Menu_Buttons/About" to="." method="_on_about_pressed"]
 [connection signal="pressed" from="Paused_Menu/Paused_Menu_Buttons/Exit_to_Main_Menu" to="." method="_on_exit_to_main_menu_pressed"]
 [connection signal="pressed" from="Paused_Menu/Paused_Menu_Buttons/Exit_Game" to="." method="_on_exit_game_pressed"]
 [connection signal="pressed" from="Options_Menu/Options_Exit" to="." method="_on_options_exit_pressed"]
-[connection signal="pressed" from="About_Menu/About_Exit" to="." method="_on_about_exit_pressed"]
